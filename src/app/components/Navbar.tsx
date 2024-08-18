@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 
 function Navbar() {
@@ -6,6 +7,14 @@ function Navbar() {
     <Link href='/' className='uppercase font-bold text-md h-12 flex items-center'>
       Next Store
     </Link>
+    <div className="flex">
+      <SignedIn>
+        Usuário logado
+      </SignedIn>
+      <SignedOut>
+        Fazer login
+      </SignedOut>
+    </div>
   </nav>
   );
 }
